@@ -1,0 +1,109 @@
+/* --- login.css --- */
+
+/* Contenedor principal: Centra el formulario */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  /* CAMBIO: Fondo degradado verde para combinar con Mind Garden */
+  background: linear-gradient(135deg, #134e5e 0%, #71b280 100%);
+  padding: 1.25rem; /* 20px */
+  font-family: "Cascadia Code", "Courier New", monospace;
+}
+
+/* La caja del formulario */
+.login-box {
+  background: white;
+  padding: 2.5rem; /* 40px */
+  border-radius: 0.625rem; /* 10px */
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2); /* Sombra */
+  width: 100%;
+  max-width: 25rem; /* 400px */
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5625rem; /* 25px */
+  color: rgb(36, 174, 34); /* Verde del logo */
+  font-size: 1.8rem;
+}
+
+/* División para agrupar Label e Input */
+.input-group {
+  margin-bottom: 1.25rem; /* 20px */
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem; /* 12px */
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* Para que el padding no rompa el ancho */
+}
+
+.input-group input:focus {
+  border-color: rgb(36, 174, 34); /* Borde verde al escribir */
+  outline: none;
+}
+
+/* Estilo del botón */
+.login-button {
+  width: 100%;
+  padding: 0.75rem; /* 12px */
+  border: none;
+  border-radius: 0.3125rem; /* 5px */
+  background-color: rgb(36, 174, 34); /* Fondo verde */
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.625rem; /* 10px */
+}
+
+.login-button:hover {
+  background-color: #1a5c1b; /* Verde más oscuro al pasar el mouse */
+}
+
+/* -------------------------------------- */
+/* MEDIA QUERY: RESPONSIVE MÓVILES */
+/* -------------------------------------- */
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 0;
+    background: #fff; /* Fondo blanco en móviles */
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .login-box {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+  }
+
+  .login-box h2 {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+
+  .input-group input {
+    padding: 1rem;
+  }
+}

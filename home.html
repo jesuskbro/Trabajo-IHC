@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Garden - Completo</title>
+    <!-- Vinculación al CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER CON MENU DESPLEGABLE -->
+    <header>
+        <nav>
+          <a href="#" class="logo">
+            <!-- Reemplazamos el SVG y el texto por tu imagen -->
+            <!-- Asegúrate de que el nombre del archivo coincida exactamente -->
+            <img src="Logo mindgarden.png" alt="Mind Garden Logo" />
+          </a>
+          
+          <ul class="menu-horizontal">
+             <!-- El resto del menú sigue igual... -->
+
+        <ul class="menu-horizontal">
+          <li>
+            Mi Jardín
+            <ul class="menu-vertical">
+              <li><a href="#">Ver perfil</a></li>
+              <li><a href="#">Mi Diario</a></li>
+              <li><a href="#">Estadísticas de Ánimo</a></li>
+              <li><a href="#">Cerrar sesión</a></li>
+            </ul>
+          </li>
+          <li>
+            Actividades
+            <ul class="menu-vertical">
+              <li><a href="#">Meditación Guiada</a></li>
+              <li><a href="#">Ejercicios de Respiración</a></li>
+              <li><a href="#">Sonidos de la Naturaleza</a></li>
+              <li><a href="#">Lecturas de Calma</a></li>
+            </ul>
+          </li>
+          <li>
+            Comunidad
+            <ul class="menu-vertical">
+              <li><a href="#">Tendencias</a></li>
+              <li><a href="#">Grupos de Apoyo</a></li>
+              <li><a href="#">Retos Mensuales</a></li>
+            </ul>
+          </li>
+          <li>
+            Ayuda
+            <ul class="menu-vertical">
+              <li><a href="#contacto">Contáctanos</a></li>
+              <li><a href="#">Tutoriales</a></li>
+              <li><a href="#">Líneas de Ayuda</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <h1>Cultiva tu Bienestar Interior</h1>
+      <p>
+        MindGarden es tu espacio personal y sereno para el journaling, el
+        monitoreo de tu estado de ánimo y la relajación. <br />
+        Diseñado para calmar, no para abrumar.
+      </p>
+      <button class="btn-primary">Sembrar mi primera idea</button>
+    </section>
+
+    <!-- Separador -->
+    <hr class="divider-line" />
+
+    <!-- SECCION CARDS -->
+    <section id="mind-jard" class="section-container">
+      <h2 class="text-center">Nuestros Contenidos</h2>
+      <ul class="cards-container">
+        <li class="card">
+          <h3>Diario Personal</h3>
+          <p>
+            Un espacio seguro para escribir tus pensamientos sin juicios.
+            Personaliza tus entradas con emociones y etiquetas.
+          </p>
+          <button class="btn-secondary">+INFO</button>
+        </li>
+        <li class="card">
+          <h3>Meditación Guiada</h3>
+          <p>
+            Sesiones de audio desde 5 minutos para reducir la ansiedad y mejorar
+            tu enfoque diario.
+          </p>
+          <button class="btn-secondary">+INFO</button>
+        </li>
+        <li class="card">
+          <h3>Monitor de Ánimo</h3>
+          <p>
+            Rastrea tus altibajos emocionales con gráficos intuitivos y descubre
+            qué influye en tu bienestar.
+          </p>
+          <button class="btn-secondary">+INFO</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECCION VIDEO LOCAL / USUARIO -->
+    <section class="section-container">
+      <div class="split-section">
+        <div class="split-text">
+          <h2>Zona de Trabajo</h2>
+          <p>
+            A veces necesitamos concentrarnos. Aquí tienes un acompañamiento
+            visual mientras organizas tus ideas en el jardín de tu mente.
+          </p>
+          <div class="caja-destacada">
+            <p>
+              <strong>Enfoque:</strong> Utiliza este espacio visual para simular
+              un entorno de trabajo tranquilo y aumentar tu productividad.
+            </p>
+          </div>
+        </div>
+        <div class="split-video">
+          <!-- AQUI ESTA TU VIDEO -->
+          <video controls>
+            <source src="video.mp4" type="video/mp4" />
+            Tu navegador no soporta la etiqueta de video.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION AYUDA / FORMULARIO -->
+    <section class="section-container" id="contacto">
+      <h2 class="text-center">Solicitud de Asistencia</h2>
+      <p class="text-center mb-30">
+        Estamos aquí para escucharte. Completa el formulario.
+      </p>
+
+      <div class="form-wrapper">
+        <form action="#">
+          <div class="campo">
+            <label for="nombre">Nombres completos: </label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Tu nombre aquí..."
+            />
+          </div>
+
+          <div class="campo">
+            <label for="pais">País de residencia: </label>
+            <select id="pais" name="pais">
+              <option value="">Seleccione un país</option>
+              <option value="Peru">Perú</option>
+              <option value="Mexico">México</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Espana">España</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label>Intereses Principales: </label>
+            <ul class="lista-opciones">
+              <li>
+                <label
+                  ><input type="checkbox" name="Intereses" value="Meditacion" />
+                  Meditación y Mindfulness</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="Intereses"
+                    value="Estadisticas"
+                  />
+                  Análisis de Sueño</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Intereses" value="Comunidad" />
+                  Grupos de Apoyo</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="Intereses" value="Nutricion" />
+                  Nutrición Consciente</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="campo">
+            <label>Preferencia de contacto: </label>
+            <ul class="lista-opciones">
+              <li>
+                <label
+                  ><input type="radio" name="contacto" value="email" checked />
+                  Email</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="contacto" value="telefono" />
+                  Teléfono</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="contacto" value="whatsapp" />
+                  WhatsApp</label
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn-primary full-width">
+              Enviar Solicitud
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Mind Garden</h4>
+          <p>
+            Tu santuario digital para la salud mental y el crecimiento personal.
+            Cultiva la calma todos los días.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explora</h4>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Conecta</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">hola@mindgarden.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2025 Mind Garden. Todos los derechos reservados.
+      </div>
+    </footer>
+  </body>
+</html>
