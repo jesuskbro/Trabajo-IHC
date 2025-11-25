@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
+    <div class="video-wrapper">
+      <!-- El video debe estar en la misma carpeta -->
+      <!-- autoplay: se reproduce solo | muted: sin sonido (obligatorio para autoplay) | loop: infinito -->
+      <video autoplay muted loop playsinline id="myVideo">
+        <source src="Video-trabajo-ihc.mp4" type="video/mp4" />
+      </video>
+      <!-- Esta capa oscura ayuda a que el formulario resalte más -->
+      <div class="video-overlay"></div>
+    </div>
     <section class="login-container">
       <div class="login-box">
         <h2>Bienvenido al Jardín</h2>

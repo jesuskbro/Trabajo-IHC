@@ -362,89 +362,81 @@ input[type="radio"] {
   color: #aabfaa;
 }
 
-/* DISEÑO RESPONSIVE (PARA CELULARES) */
+/* MENÚ HAMBURGUESA (RESPONSIVE) */
 
-/* Se activa cuando la pantalla mide 768px o menos (Tablets y Celulares) */
+/* 1. Estilo base del botón (Oculto en PC) */
+.hamburger {
+  display: none; /* En las PC no se ve */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(36, 174, 34); /* Color verde Mind Garden */
+  padding: 5px;
+}
+
+/* 2. Media Query para Celulares y Tablets */
 @media (max-width: 768px) {
-  /* 1. Ajuste del HEADER y MENÚ */
-  header {
-    padding: 10px 20px;
-    position: relative; /* Cambia sticky a relative si molesta al hacer scroll */
+  /* Mostrar el botón hamburguesa */
+  .hamburger {
+    display: block;
   }
 
-  nav {
-    height: auto; /* Permite que el menú crezca hacia abajo */
-    flex-direction: column; /* Pone el logo arriba y el menú abajo */
-    gap: 15px;
-    padding: 15px 0;
-  }
-
+  /* Ocultar el menú horizontal por defecto */
   ul.menu-horizontal {
-    flex-direction: column; /* Pone los items uno debajo del otro */
+    display: none; /* OCULTO INICIALMENTE */
+    flex-direction: column;
+    position: absolute;
+    top: 80px; /* Altura del header */
+    left: 0;
     width: 100%;
-    align-items: center;
-    gap: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    border-top: 1px solid #eee;
   }
 
+  /* Clase mágica: Esta clase la agrega JS cuando haces clic */
+  ul.menu-horizontal.active {
+    display: flex; /* SE MUESTRA AL HACER CLIC */
+  }
+
+  /* Estilo de los items en móvil */
   ul.menu-horizontal > li {
-    width: 100%; /* Botones de ancho completo */
+    width: 100%;
     text-align: center;
     padding: 15px 0;
-    border-bottom: 1px solid #eee; /* Línea separadora suave */
+    border-bottom: 1px solid #f0f0f0;
   }
 
+  /* Manejo de submenús en móvil (Menu Vertical) */
   ul.menu-vertical {
-    position: relative;
+    position: relative; /* Ya no flotan, se quedan dentro */
+    top: 0;
     box-shadow: none;
-    border-top: none;
-    background-color: #f9f9f9;
-    text-align: center;
+    border: none;
+    background-color: #f9fdf9; /* Fondo un poco más claro */
     width: 100%;
+    display: none; /* Ocultos hasta hacer hover/clic */
   }
 
-  /* 2. Ajuste de TEXTOS y TÍTULOS */
-  #hero {
-    padding: 40px 20px;
+  /* En móvil, mostramos el submenú al tocar el padre (hover funciona como touch) */
+  ul.menu-horizontal > li:hover ul.menu-vertical {
+    display: block;
   }
 
+  /* Ajustes generales para móvil (Hero, textos, etc.) */
+  .split-section {
+    flex-direction: column-reverse;
+  }
   #hero h1 {
     font-size: 2rem;
   }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  /* 3. Ajuste de ESPACIOS (Padding) */
-  .section-container {
-    padding: 40px 15px;
-  }
-
-  .split-section {
-    padding: 20px;
-    flex-direction: column-reverse; /* Pone el video ARRIBA del texto en móvil */
-    gap: 20px;
-  }
-
-  .split-text,
-  .split-video {
-    min-width: 100%; /* Ocupan todo el ancho */
-  }
-
-  /* 4. Ajuste del FORMULARIO */
   .form-wrapper {
-    padding: 20px;
     width: 100%;
+    padding: 20px;
   }
-
-  /* 5. Ajuste del FOOTER */
   .footer-container {
     flex-direction: column;
-    gap: 30px;
     text-align: center;
-  }
-
-  .footer-col h4 {
-    margin-bottom: 10px;
   }
 }
