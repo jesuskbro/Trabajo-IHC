@@ -361,3 +361,90 @@ input[type="radio"] {
   border-top: 1px solid #3e6b40;
   color: #aabfaa;
 }
+
+/* DISEÑO RESPONSIVE (PARA CELULARES) */
+
+/* Se activa cuando la pantalla mide 768px o menos (Tablets y Celulares) */
+@media (max-width: 768px) {
+  /* 1. Ajuste del HEADER y MENÚ */
+  header {
+    padding: 10px 20px;
+    position: relative; /* Cambia sticky a relative si molesta al hacer scroll */
+  }
+
+  nav {
+    height: auto; /* Permite que el menú crezca hacia abajo */
+    flex-direction: column; /* Pone el logo arriba y el menú abajo */
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  ul.menu-horizontal {
+    flex-direction: column; /* Pone los items uno debajo del otro */
+    width: 100%;
+    align-items: center;
+    gap: 0;
+  }
+
+  ul.menu-horizontal > li {
+    width: 100%; /* Botones de ancho completo */
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* Línea separadora suave */
+  }
+
+  ul.menu-vertical {
+    position: relative;
+    box-shadow: none;
+    border-top: none;
+    background-color: #f9f9f9;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* 2. Ajuste de TEXTOS y TÍTULOS */
+  #hero {
+    padding: 40px 20px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* 3. Ajuste de ESPACIOS (Padding) */
+  .section-container {
+    padding: 40px 15px;
+  }
+
+  .split-section {
+    padding: 20px;
+    flex-direction: column-reverse; /* Pone el video ARRIBA del texto en móvil */
+    gap: 20px;
+  }
+
+  .split-text,
+  .split-video {
+    min-width: 100%; /* Ocupan todo el ancho */
+  }
+
+  /* 4. Ajuste del FORMULARIO */
+  .form-wrapper {
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* 5. Ajuste del FOOTER */
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    margin-bottom: 10px;
+  }
+}
