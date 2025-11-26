@@ -7,113 +7,210 @@
   align-items: center;
   min-height: 100vh;
   width: 100%;
-
   background: transparent;
-
   padding: 1.25rem;
   position: relative;
   z-index: 1;
+  /* FUENTE CUERPO: Englebert (Legible y amigable) */
+  font-family: "Englebert", sans-serif;
 }
 
+/* Enlace de registro */
+.register-section {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-section a {
+  color: rgb(36, 174, 34);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-section a:hover {
+  text-decoration: underline;
+  color: #1a5c1b;
+}
+
+/* Caja del Login */
 .login-box {
   background: white;
-  padding: 2.5rem; /* 40px */
-  border-radius: 0.625rem; /* 10px */
-  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 2.5rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 25rem; /* 400px */
+  max-width: 25rem;
   text-align: center;
 }
 
+/* Título del Login: FUENTE DELIUS (Destacada) */
 .login-box h2 {
-  margin-bottom: 1.5625rem; /* 25px */
-  color: rgb(36, 174, 34); /* Verde del logo */
-  font-size: 1.8rem;
+  font-family: "Delius", cursive;
+  margin-bottom: 1.5625rem;
+  color: rgb(36, 174, 34);
+  font-size: 2rem; /* Un poco más grande para lucir la fuente */
 }
 
 /* División para agrupar Label e Input */
 .input-group {
-  margin-bottom: 1.25rem; /* 20px */
+  margin-bottom: 1.25rem;
   text-align: left;
 }
 
 .input-group label {
   display: block;
-  margin-bottom: 0.5rem; /* 8px */
+  margin-bottom: 0.5rem;
   font-weight: bold;
   color: #555;
 }
 
+/* Inputs: Englebert para que lo que escriban se vea claro */
 .input-group input {
+  font-family: "Englebert", sans-serif;
   width: 100%;
-  padding: 0.75rem; /* 12px */
+  padding: 0.75rem;
   border: 1px solid #ccc;
-  border-radius: 0.3125rem; /* 5px */
-  font-size: 1rem;
+  border-radius: 0.3125rem;
+  font-size: 1.1rem; /* Aumentado ligeramente para legibilidad */
   transition: border-color 0.3s;
-  box-sizing: border-box; /* Para que el padding no rompa el ancho */
+  box-sizing: border-box;
 }
 
 .input-group input:focus {
-  border-color: rgb(36, 174, 34); /* Borde verde al escribir */
+  border-color: rgb(36, 174, 34);
   outline: none;
 }
 
 /* Estilo del botón */
 .login-button {
+  font-family: "Englebert", sans-serif; /* Texto del botón amigable */
   width: 100%;
-  padding: 0.75rem; /* 12px */
+  padding: 0.75rem;
   border: none;
-  border-radius: 0.3125rem; /* 5px */
-  background-color: rgb(36, 174, 34); /* Fondo verde */
+  border-radius: 0.3125rem;
+  background-color: rgb(36, 174, 34);
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 0.625rem; /* 10px */
+  margin-top: 0.625rem;
 }
 
 .login-button:hover {
-  background-color: #1a5c1b; /* Verde más oscuro al pasar el mouse */
+  background-color: #1a5c1b;
 }
 
+/* Video de fondo */
 .video-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Se va detrás de todo */
+  z-index: -1;
   overflow: hidden;
 }
 
 #myVideo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Hace que el video cubra toda la pantalla sin deformarse */
+  object-fit: cover;
 }
 
-/* Capa oscura semitransparente sobre el video */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Negro al 50% de opacidad */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
 
-/* MEDIA QUERY: RESPONSIVE MÓVILES */
+/* VENTANA MODAL PERSONALIZADA */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+}
 
+.modal-card {
+  font-family: "Englebert", sans-serif; /* Texto base del modal */
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-top: 6px solid rgb(36, 174, 34);
+  animation: popIn 0.3s ease;
+}
+
+/* Título del modal: DELIUS */
+.modal-card h3 {
+  font-family: "Delius", cursive;
+  color: rgb(36, 174, 34);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.modal-card p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.modal-btn {
+  font-family: "Englebert", sans-serif;
+  background-color: rgb(36, 174, 34);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-btn:hover {
+  background-color: #1a5c1b;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* MEDIA QUERY */
 @media (max-width: 600px) {
   .login-container {
     padding: 0;
-    background: #fff; /* Fondo blanco en móviles */
+    background: #fff;
     align-items: flex-start;
     min-height: auto;
   }
-
   .login-box {
     padding: 1.5rem;
     margin-top: 2rem;
@@ -123,12 +220,10 @@
     border-radius: 0;
     border: none;
   }
-
   .login-box h2 {
     font-size: 1.7rem;
     text-align: left;
   }
-
   .input-group input {
     padding: 1rem;
   }

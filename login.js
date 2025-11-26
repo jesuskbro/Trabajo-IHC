@@ -1,20 +1,58 @@
-// La función que maneja la lógica de inicio de sesión
+// Variable para guardar qué debe hacer el botón "Aceptar"
+let accionAlCerrar = null;
+
+// Función para mostrar la tarjeta personalizada
+function mostrarModal(titulo, mensaje, accion) {
+  // 1. Ponemos el texto
+  document.getElementById("modal-title").innerText = titulo;
+  document.getElementById("modal-message").innerText = mensaje;
+
+  // 2. Guardamos la acción (si hay redirección)
+  accionAlCerrar = accion;
+
+  // 3. Mostramos la tarjeta agregando la clase 'active'
+  document.getElementById("custom-modal").classList.add("active");
+}
+
+// Función para cerrar la tarjeta
+function cerrarModal() {
+  // 1. Ocultamos la tarjeta
+  document.getElementById("custom-modal").classList.remove("active");
+
+  // 2. Si había una acción pendiente (como ir al Home), la ejecutamos
+  if (accionAlCerrar) {
+    accionAlCerrar();
+    accionAlCerrar = null; // Limpiamos la acción
+  }
+}
+
+// Lógica del Login
 function validarLogin(event) {
-  // Previene el envío del formulario por defecto (evita la recarga)
   event.preventDefault();
 
-  // Clave estática para la demo
-  const CLAVE_SECRETA = "ok";
   const passwordInput = document.getElementById("password").value;
 
-  // 2. Realizar la verificación
-  if (passwordInput.toLowerCase() === CLAVE_SECRETA) {
-    alert("¡Acceso concedido! Bienvenido.");
-    // Redirige a tu página principal
-    window.location.href = "home.html";
+  // VALIDACIÓN
+  if (passwordInput.length >= 8) {
+    // CASO ÉXITO:
+    // Pasamos título, mensaje y una función para redirigir
+    mostrarModal(
+      "¡Bienvenido!",
+      "Acceso concedido al Jardín. Preparando tu espacio...",
+      function () {
+        window.location.href = "home.html";
+      }
+    );
   } else {
-    alert("Clave incorrecta. Inténtalo de nuevo.");
-    document.getElementById("password").value = "";
+    // CASO ERROR:
+    // Solo mostramos mensaje, sin función de redirección
+    mostrarModal(
+      "Contraseña inválida",
+      "La contraseña es muy corta. Por seguridad, debe tener al menos 8 caracteres.",
+      null
+    );
+    // Opcional: limpiar campo
+    // document.getElementById("password").value = "";
   }
 
   return false;

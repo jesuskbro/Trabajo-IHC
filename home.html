@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+ 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mind Garden - Completo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Englebert&display=swap" rel="stylesheet">
     <!-- Vinculación al CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -65,8 +69,19 @@
       </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="hero">
+   <!-- HERO SECTION CON VIDEO DE FONDO -->
+   <section id="hero">
+    <!-- 1. El Video de Fondo -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <!-- AQUÍ ESTÁ EL CAMBIO DE NOMBRE -->
+      <source src="fondo-menu.mp4" type="video/mp4" />
+    </video>
+
+    <!-- 2. Capa oscura para que se lea el texto -->
+    <div class="hero-overlay"></div>
+
+    <!-- 3. El contenido (Texto y Botón) -->
+    <div class="hero-content">
       <h1>Cultiva tu Bienestar Interior</h1>
       <p>
         MindGarden es tu espacio personal y sereno para el journaling, el
@@ -74,7 +89,8 @@
         Diseñado para calmar, no para abrumar.
       </p>
       <button class="btn-primary">Sembrar mi primera idea</button>
-    </section>
+    </div>
+  </section>
 
     <!-- Separador -->
     <hr class="divider-line" />
